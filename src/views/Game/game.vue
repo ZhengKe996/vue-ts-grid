@@ -68,8 +68,10 @@ function over() {
 function fail() {
   clearInterval(clock.value);
   flag.value = false;
-  console.log("游戏结束", state.value);
-  router.push("/game-over");
+  router.push({
+    name: "game-over",
+    params: { state: state.value },
+  });
 }
 
 function delrow() {
