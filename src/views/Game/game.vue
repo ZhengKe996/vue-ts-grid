@@ -121,7 +121,6 @@ function score() {
 function speedup() {
   speed.value += 2;
   if (speed.value == 20) {
-    // alert('你超神了');
     console.log("666");
   }
 }
