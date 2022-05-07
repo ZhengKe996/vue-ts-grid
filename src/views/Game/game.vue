@@ -2,6 +2,12 @@
   <div id="main" ref="main">
     <div id="con" ref="con"></div>
   </div>
+  <audio
+    src="/src/assets/music/music.mp3"
+    controls
+    :autoplay="true"
+    :style="'display:none;'"
+  ></audio>
 </template>
 
 <script setup lang="ts">
