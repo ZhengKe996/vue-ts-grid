@@ -3,7 +3,7 @@
     <div id="con" ref="con"></div>
   </div>
   <audio
-    src="/src/assets/music/music.mp3"
+    :src="music"
     controls
     :autoplay="true"
     :style="'display:none;'"
@@ -14,6 +14,7 @@
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { creatediv, creatcell } from "./scene";
+import music from "@/assets/music/music.mp3";
 const router = useRouter();
 
 const clock = ref();
