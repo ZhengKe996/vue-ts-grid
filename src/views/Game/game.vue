@@ -169,7 +169,7 @@ onMounted(() => {
 #main {
   width: 100vw;
   height: 100vh;
-  background: white;
+  background: #eee;
   // border: 2px solid gray;
   margin: 0 auto;
   overflow: hidden;
@@ -196,10 +196,10 @@ onMounted(() => {
   flex: 1;
   // width: 100px;
   display: inline-block;
-  border: #000 1px solid;
+  border: #333 1px solid;
 }
 
 .black {
-  background: black;
+  background: #333;
 }
 </style>
