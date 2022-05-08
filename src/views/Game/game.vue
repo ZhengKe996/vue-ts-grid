@@ -4,7 +4,10 @@
   </div>
   <audio
     :src="music"
+    :muted="false"
     controls
+    webkit-playsinline
+    playsinline
     :autoplay="true"
     :style="'display:none;'"
   ></audio>
