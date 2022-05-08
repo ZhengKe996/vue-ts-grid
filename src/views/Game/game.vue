@@ -2,16 +2,9 @@
   <div id="main" ref="main">
     <div id="con" ref="con"></div>
   </div>
-  <audio
-    :src="music"
-    :muted="false"
-    controls
-    x5-playsinline="true"
-    :playsinline="true"
-    :webkit-playsinline="true"
-    :autoplay="true"
-    :style="'display:none;'"
-  ></audio>
+  <audio :autoplay="true" :loop="true" id="audios" ref="audios">
+    <source :src="music" type="audio/mp3" />
+  </audio>
 </template>
 
 <script setup lang="ts">
@@ -20,6 +13,7 @@ import { useRouter } from "vue-router";
 import { creatediv, creatcell } from "./scene";
 import music from "@/assets/music/music.mp3";
 const router = useRouter();
+const audios = ref();
 
 const clock = ref();
 const state = ref(0);
@@ -28,6 +22,32 @@ const flag = ref(false);
 
 const main = ref();
 const con = ref();
+
+function audioAutoPlay() {
+  const play = function () {
+    // @ts-ignore
+    audios.value.play();
+    document.removeEventListener("touchstart", play, false);
+  };
+
+  // @ts-ignore
+  audios.value.play();
+  document.addEventListener(
+    "WeixinJSBridgeReady",
+    function () {
+      play();
+    },
+    false
+  );
+  document.addEventListener(
+    "YixinJSBridgeReady",
+    function () {
+      play();
+    },
+    false
+  );
+  document.addEventListener("touchstart", play, false);
+}
 
 const createrow = () => {
   const row = creatediv("row"); // 创建div className = row
@@ -91,6 +111,8 @@ function delrow() {
   }
 }
 const init = () => {
+  audioAutoPlay();
+
   createrow();
 
   main.value.onclick = function (e: MouseEvent) {
