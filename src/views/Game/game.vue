@@ -78,7 +78,7 @@ function move() {
   over();
   if (top == 0) {
     createrow();
-    con.value.style.top = "-102px";
+    con.value.style.top = "-25vh";
     delrow();
   }
 }
@@ -167,26 +167,26 @@ onMounted(() => {
 
 <style lang="less">
 #main {
-  width: 408px;
-  height: 408px;
+  width: 100vw;
+  height: 100vh;
   background: white;
-  border: 2px solid gray;
+  // border: 2px solid gray;
   margin: 0 auto;
   overflow: hidden;
 }
 
 #con {
   width: 100%;
-  height: 400px;
+  height: 100vh;
   position: relative;
   // top: -408px; /*隐藏所有格子*/
   border-collapse: collapse;
 }
 /* 行 */
 .row {
-  height: 100px;
+  height: 25vh;
   width: 100%;
-  background-color: aqua;
+  // background-color: aqua;
   display: flex;
   justify-content: space-between;
 }
@@ -196,7 +196,7 @@ onMounted(() => {
   flex: 1;
   // width: 100px;
   display: inline-block;
-  border: rgb(54, 74, 129) 1px solid;
+  border: #000 1px solid;
 }
 
 .black {
