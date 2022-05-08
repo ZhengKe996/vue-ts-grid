@@ -6,8 +6,9 @@
     :src="music"
     :muted="false"
     controls
-    webkit-playsinline
-    playsinline
+    x5-playsinline="true"
+    :playsinline="true"
+    :webkit-playsinline="true"
     :autoplay="true"
     :style="'display:none;'"
   ></audio>
