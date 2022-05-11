@@ -11,7 +11,10 @@
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { creatediv, creatcell } from "./scene";
-import music from "@/assets/music/music.mp3";
+
+import { audioAutoPlay } from "@/utils/audio-auto-play";
+import { SONG } from "@/config";
+const music = ref(SONG);
 const router = useRouter();
 const audios = ref();
 
@@ -22,32 +25,6 @@ const flag = ref(false);
 
 const main = ref();
 const con = ref();
-
-function audioAutoPlay() {
-  const play = function () {
-    // @ts-ignore
-    audios.value.play();
-    document.removeEventListener("touchstart", play, false);
-  };
-
-  // @ts-ignore
-  audios.value.play();
-  document.addEventListener(
-    "WeixinJSBridgeReady",
-    function () {
-      play();
-    },
-    false
-  );
-  document.addEventListener(
-    "YixinJSBridgeReady",
-    function () {
-      play();
-    },
-    false
-  );
-  document.addEventListener("touchstart", play, false);
-}
 
 const createrow = () => {
   const row = creatediv("row"); // 创建div className = row
@@ -111,7 +88,7 @@ function delrow() {
   }
 }
 const init = () => {
-  audioAutoPlay();
+  audioAutoPlay(audios);
 
   createrow();
 
