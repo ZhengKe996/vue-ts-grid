@@ -1,0 +1,1 @@
+function n(t){const e=function(){t.value.play(),document.removeEventListener("touchstart",e,!1)};t.value.play(),document.addEventListener("WeixinJSBridgeReady",function(){e()},!1),document.addEventListener("YixinJSBridgeReady",function(){e()},!1),document.addEventListener("touchstart",e,!1)}export{n as a};

@@ -1,0 +1,1 @@
+#main{width:100vw;height:100vh;background:#eee;margin:0 auto;overflow:hidden}#con{width:100%;height:100vh;position:relative;border-collapse:collapse}.row{height:25vh;width:100%;display:flex;justify-content:space-between}.cell{height:100%;flex:1;display:inline-block;border:#333 1px solid}.black{background:#333}
